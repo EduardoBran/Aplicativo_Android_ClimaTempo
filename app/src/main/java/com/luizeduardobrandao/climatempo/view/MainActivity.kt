@@ -75,7 +75,9 @@ class MainActivity : AppCompatActivity() {
                 is WeatherResult.Success -> {
                     val data = state.data
                     binding.tvCityName.text = data.name
-                    binding.tvCountry.text = data.sys.country
+                    // nome do país
+                    val locale = java.util.Locale("", data.sys.country)
+                    binding.tvCountry.text = locale.displayCountry
                     binding.tvTemperature.text = "${data.main.temp} °C"
                     binding.tvDescription.text = data.weather.firstOrNull()?.description.orEmpty()
                     binding.tvCityName.visibility = View.VISIBLE
