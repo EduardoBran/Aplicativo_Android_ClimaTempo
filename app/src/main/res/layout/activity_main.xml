@@ -66,6 +66,9 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/cont_search"
                 android:text="@string/btn_search"
+                app:icon="@drawable/ic_search"
+                app:iconTint="@color/white"
+                app:iconPadding="8dp"
                 app:layout_constraintBaseline_toBaselineOf="@id/tilCity"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -75,7 +78,7 @@
                 style="@style/Widget.AppCompat.ProgressBar"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tilCity" />
@@ -92,7 +95,7 @@
                 app:layout_constraintStart_toEndOf="@id/progressBar"
                 app:layout_constraintTop_toBottomOf="@id/tilCity" />
 
-            <!-- Código do país -->
+            <!-- Nome do país -->
             <TextView
                 android:id="@+id/tvCountry"
                 android:layout_width="wrap_content"
