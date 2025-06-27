@@ -34,7 +34,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/innerLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="16dp">
 
             <!-- Campo de cidade (centralizado via bias) -->

@@ -16,7 +16,9 @@ import kotlinx.coroutines.launch
 // *  - Iniciar chamadas ao repositório sem bloquear a UI
 // *  - Expor um LiveData para a Activity observar e reagir às mudanças
 
-class MainViewModel(private val repository: WeatherRepository): ViewModel() {
+class MainViewModel(
+    private val repository: WeatherRepository // injetado pelo MainViewModelFactory
+): ViewModel() {
 
     // LiveData interna mutável que guarda o estado atual da busca
     private val _weatherState = MutableLiveData<WeatherResult>()
