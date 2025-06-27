@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ClimaTempo</string>
+
+    <string name="toolbar_title">Clima Atual</string>
+    <string name="hint_edit_text">Ex: São Paulo ou Niterói, RJ</string>
+    <string name="btn_search">Pesquisar</string>
+    <string name="cont_search">Pesquisar</string>
+
 </resources>
