@@ -16,6 +16,7 @@ import com.luizeduardobrandao.climatempo.repository.WeatherResult
 import com.luizeduardobrandao.climatempo.viewmodel.MainViewModel
 import com.luizeduardobrandao.climatempo.viewmodel.MainViewModelFactory
 import com.luizeduardobrandao.climatempo.model.Location
+import com.bumptech.glide.Glide
 
 // * Activity principal: configura binding, listeners e observers do ViewModel.
 
@@ -80,6 +81,14 @@ class MainActivity : AppCompatActivity() {
                     binding.tvCountry.text = locale.displayCountry
                     binding.tvTemperature.text = "${data.main.temp} °C"
                     binding.tvDescription.text = data.weather.firstOrNull()?.description.orEmpty()
+                    // Carrega o ícone do tempo via Glide
+                    data.weather.firstOrNull()?.icon?.let { iconCode ->
+                        val iconUrl = "https://openweathermap.org/img/wn/${iconCode}@2x.png"
+                        Glide.with(this)
+                            .load(iconUrl)
+                            .into(binding.ivWeatherIcon)
+                        binding.ivWeatherIcon.visibility = View.VISIBLE
+                    }
                     binding.tvCityName.visibility = View.VISIBLE
                     binding.tvCountry.visibility = View.VISIBLE
                     binding.tvTemperature.visibility = View.VISIBLE

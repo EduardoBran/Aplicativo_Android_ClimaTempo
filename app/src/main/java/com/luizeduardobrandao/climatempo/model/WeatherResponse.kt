@@ -29,7 +29,8 @@ data class WeatherResponse (
     // * Representa um elemento do array "weather" do JSON.
     // * @property description Descrição textual do clima (ex: "céu limpo").
     data class Weather(
-        val description: String
+        val description: String,
+        val icon: String
     )
 }
 

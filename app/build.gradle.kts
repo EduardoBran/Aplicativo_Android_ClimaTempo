@@ -58,6 +58,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
 
+    // ícone clima
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+
     // Banner Google AdMob
     implementation("com.google.android.gms:play-services-ads:22.1.0")
 }
