@@ -6,4 +6,17 @@
     <string name="btn_search">Pesquisar</string>
     <string name="cont_search">Pesquisar</string>
 
+    <!-- Título para o diálogo de seleção de cidade -->
+    <string name="title_select_city">Selecione a cidade</string>
+
+    <!-- Erro genérico em caso de falha na requisição de clima -->
+    <string name="error_generic">Erro ao obter dados do clima. Tente novamente mais tarde.</string>
+
+    <!-- Mensagem quando nenhuma cidade é encontrada -->
+    <string name="error_city_not_found">Não encontrei essa cidade. Verifique o nome e tente novamente.</string>
+
+    <!-- Mensagem quando o campo de cidade está vazio -->
+    <string name="error_empty_city">Por favor, insira o nome de uma cidade.</string>
+
+
 </resources>
