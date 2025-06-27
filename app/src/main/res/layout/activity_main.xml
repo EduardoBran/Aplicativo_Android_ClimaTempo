@@ -83,15 +83,25 @@
             <!-- Nome da cidade -->
             <TextView
                 android:id="@+id/tvCityName"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:textAppearance="?attr/textAppearanceHeadlineSmall"
                 android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/progressBar"
                 app:layout_constraintTop_toBottomOf="@id/tilCity" />
+
+            <!-- Código do país -->
+            <TextView
+                android:id="@+id/tvCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvCityName"
+                app:layout_constraintStart_toEndOf="@id/tvCityName" />
 
             <!-- Temperatura -->
             <TextView
@@ -101,9 +111,9 @@
                 android:layout_marginTop="8dp"
                 android:textAppearance="?attr/textAppearanceDisplayMedium"
                 android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCityName"
                 app:layout_constraintStart_toStartOf="@id/tvCityName"
-                app:layout_constraintTop_toBottomOf="@id/tvCityName" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Descrição do clima -->
             <TextView
@@ -113,9 +123,9 @@
                 android:layout_marginTop="4dp"
                 android:textAppearance="?attr/textAppearanceBodyLarge"
                 android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTemperature"
                 app:layout_constraintStart_toStartOf="@id/tvTemperature"
-                app:layout_constraintTop_toBottomOf="@id/tvTemperature" />
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
