@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.luizeduardobrandao.climatempo.R
 import com.luizeduardobrandao.climatempo.databinding.ActivityMainBinding
+import com.luizeduardobrandao.climatempo.helper.BannerAds
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,5 +25,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // carrega o banner no container da view binding
+        BannerAds.loadBanner(this, binding.frameBanner)
     }
 }

@@ -57,4 +57,7 @@ dependencies {
     // Lifecycle, LiveData & ViewModel
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+
+    // Banner Google AdMob
+    implementation("com.google.android.gms:play-services-ads:22.1.0")
 }
