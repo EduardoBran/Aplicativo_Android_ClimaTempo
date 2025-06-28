@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             binding.tvCountry.visibility = View.GONE
             binding.tvTemperature.visibility = View.GONE
             binding.tvDescription.visibility = View.GONE
+            binding.ivWeatherIcon.visibility = View.GONE
 
             when(state) {
 
