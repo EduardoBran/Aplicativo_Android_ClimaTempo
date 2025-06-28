@@ -1,7 +1,10 @@
 package com.luizeduardobrandao.climatempo.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -117,25 +120,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Ao clicar no botão de pesquisa
+    // Eventos de cliques
     private fun setListeners() {
+        // Clique no botão “Pesquisar”
         binding.btnSearch.setOnClickListener {
-            // Lê e valida o texto digitado no EditText
-            val city = binding.etCity.text.toString().trim()
+            doSearch()
+        }
 
-            if (city.isNotEmpty()){
-                // Solicita ao ViewModel busca de clima para a cidade
-                viewModel.fetchWeather(city)
+        // Pressionar “Pesquisar” no teclado virtual
+        binding.etCity.setOnEditorActionListener { v, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                doSearch()
+                true
             }
             else {
-                // Se vazio, informa ao usuário via Toast
-                Toast.makeText(
-                    this, getString(R.string.error_empty_city), Toast.LENGTH_SHORT)
-                    .show()
+                false
             }
         }
     }
 
+    // Exibe a listagem de cidades
     private fun showLocationDialog(options: List<Location>) {
         // Constrói array de labels "Cidade, Estado ou País"
         val labels = options.map { loc ->
@@ -151,5 +155,24 @@ class MainActivity : AppCompatActivity() {
             }
             .setNegativeButton(android.R.string.cancel, null)
             .show()
+    }
+
+    // Extrai texto, dispara fetchWeather e fecha o teclado. (chamada em setListeners)
+    private fun doSearch(){
+        val city = binding.etCity.text.toString().trim()
+        if (city.isNotEmpty()){
+            // Solicita ao ViewModel busca de clima para a cidade
+            viewModel.fetchWeather(city)
+            // Esconde o teclado
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(binding.etCity.windowToken, 0)
+        }
+        else {
+            // Se vazio, informa ao usuário via Toast
+            Toast.makeText(
+                this, getString(R.string.error_empty_city), Toast.LENGTH_SHORT)
+                .show()
+        }
+
     }
 }
